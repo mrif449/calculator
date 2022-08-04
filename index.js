@@ -13,13 +13,15 @@ keypad.map(button => {
                 break;
             case '=':
                 try{
-                    view.innerText = eval(view.innerText);
+                    view.innerText = parseFloat(eval(view.innerText).toFixed(20));
                 } catch {
                     view.innerText = "Math Error"
                 }
                 break;
             default:
+                //let data = view.innerText
                 view.innerText += e.target.innerText;
+                
         }
     })
 })
